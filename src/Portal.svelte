@@ -1,18 +1,20 @@
 <script>
   import { onMount, onDestroy } from "svelte";
 
+  export let host = document.body;
+
   let portal;
   let componentInstance;
 
   onMount(() => {
     portal = document.createElement("div");
     portal.className = "svelte-portal";
-    document.body.appendChild(portal);
+    host.appendChild(portal);
     portal.appendChild(componentInstance);
   });
 
   onDestroy(() => {
-    document.body.removeChild(portal);
+    host.removeChild(portal);
   });
 </script>
 
