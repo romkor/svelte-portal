@@ -1,0 +1,32 @@
+{
+  "name": "svelte-portal",
+  "version": "0.0.1",
+  "description": "Svelte component for rendering outside the DOM of parent component",
+  "main": "src/Portal.svelte",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/romkor/svelte-portal.git"
+  },
+  "keywords": [
+    "svelte",
+    "portal"
+  ],
+  "contributors": [
+    {
+      "name": "Thomas Juster",
+      "url": "https://github.com/ThomasJuster"
+    },
+    {
+      "name": "Roman Rodych",
+      "url": "https://github.com/romkor"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/romkor/svelte-portal/issues"
+  },
+  "homepage": "https://github.com/romkor/svelte-portal#readme"
+}
