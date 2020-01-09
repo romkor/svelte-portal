@@ -18,13 +18,13 @@ yarn add svelte-portal
 
 ```html
 <script>
-  import Portal from 'svelte-portal'
+  import Portal from 'svelte-portal';
 
-  export let show = true;	
+  export let show = true;
 </script>
 
 {#if show}
-  <Portal host="{document.body}">
+  <Portal target="{document.body}">
     <div class="notification __success">Entity successfully updated!</div>
   </Portal>
 {/if}
