@@ -8,7 +8,6 @@
 
   onMount(() => {
     portal = document.createElement("div");
-    portal.className = "svelte-portal";
     target.appendChild(portal);
     portal.appendChild(componentInstance);
   });
