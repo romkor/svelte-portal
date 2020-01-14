@@ -4,7 +4,8 @@
   "description": "Svelte component for rendering outside the DOM of parent component",
   "main": "src/Portal.svelte",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "release-it"
   },
   "repository": {
     "type": "git",
@@ -28,5 +29,8 @@
   "bugs": {
     "url": "https://github.com/romkor/svelte-portal/issues"
   },
-  "homepage": "https://github.com/romkor/svelte-portal#readme"
+  "homepage": "https://github.com/romkor/svelte-portal#readme",
+  "devDependencies": {
+    "release-it": "^12.4.3"
+  }
 }
