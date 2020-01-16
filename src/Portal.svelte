@@ -1,19 +1,34 @@
 <script>
-  import { onMount, onDestroy } from "svelte";
+  import { onMount } from "svelte";
 
   export let target = document.body;
 
+  let targetEl;
   let portal;
   let componentInstance;
 
   onMount(() => {
-    portal = document.createElement("div");
-    target.appendChild(portal);
-    portal.appendChild(componentInstance);
-  });
+    if (typeof target === "string") {
+      targetEl = document.querySelector(target);
+      // Force exit
+      if (targetEl === null) {
+        return () => {};
+      }
+    } else if (target instanceof HTMLElement) {
+      targetEl = target;
+    } else {
+      throw new TypeError(
+        `Unknown target type: ${typeof target}. Allowed types: String (CSS selector), HTMLElement.`
+      );
+    }
 
-  onDestroy(() => {
-    target.removeChild(portal);
+    portal = document.createElement("div");
+    targetEl.appendChild(portal);
+    portal.appendChild(componentInstance);
+
+    return () => {
+      targetEl.removeChild(portal);
+    };
   });
 </script>
 
