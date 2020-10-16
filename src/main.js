@@ -1,3 +1,1 @@
-import Portal from "./Portal.svelte";
-
-export default Portal;
+module.exports = require('./Portal.svelte');
