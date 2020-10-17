@@ -14,9 +14,6 @@
       <Portal target="body > .target">
         <div id="renderedInTargetClass"></div>
       </Portal>
-      <Portal target={undefined}>
-        invalid Portal target
-      </Portal>
     </div>
   </main>
 

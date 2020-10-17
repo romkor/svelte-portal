@@ -1,6 +1,5 @@
 import { render } from '@testing-library/svelte'
 
-import Portal from '../src/Portal.svelte'
 import TestPortalWrapper from './TestPortalWrapper.svelte'
 
 describe('<Portal />', () => {
