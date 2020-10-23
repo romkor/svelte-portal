@@ -1,1 +1,1 @@
-module.exports = require('./Portal.svelte');
+module.exports = require("./Portal.svelte");
