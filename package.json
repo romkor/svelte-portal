@@ -6,7 +6,9 @@
   "module": "src/main.es.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "release-it"
+    "release": "release-it",
+    "formatting:check": "prettier --check .",
+    "formatting:fix": "prettier --write ."
   },
   "repository": {
     "type": "git",
@@ -32,6 +34,7 @@
   },
   "homepage": "https://github.com/romkor/svelte-portal#readme",
   "devDependencies": {
+    "prettier": "2.1.2",
     "release-it": "^14.0.0"
   }
 }
