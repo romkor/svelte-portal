@@ -5,7 +5,9 @@
   "main": "src/main.cjs.js",
   "module": "src/main.es.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest test",
+    "test:watch": "npm run test -- --watch",
+    "test:coverage": "jest test --coverage",
     "release": "release-it",
     "formatting:check": "prettier --check .",
     "formatting:fix": "prettier --write ."
@@ -34,7 +36,14 @@
   },
   "homepage": "https://github.com/romkor/svelte-portal#readme",
   "devDependencies": {
-    "prettier": "2.1.2",
-    "release-it": "^14.0.0"
+    "release-it": "^14.0.0",
+    "@babel/preset-env": "^7.12.1",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/svelte": "^3.0.0",
+    "babel-jest": "^26.5.2",
+    "jest": "^26.5.3",
+    "jest-transform-svelte": "^2.1.1",
+    "svelte": "^3.29.0",
+    "prettier": "2.1.2"
   }
 }
