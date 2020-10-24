@@ -8,7 +8,6 @@
     "test": "jest test",
     "test:watch": "npm run test -- --watch",
     "test:coverage": "jest test --coverage",
-    "release": "release-it"
     "release": "release-it",
     "formatting:check": "prettier --check .",
     "formatting:fix": "prettier --write ."
