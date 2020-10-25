@@ -13,4 +13,4 @@ jobs:
       - name: Run tests
         run: |
           npm ci
-          npm run formatting:check
+          npm run test
