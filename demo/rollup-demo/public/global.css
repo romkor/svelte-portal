@@ -66,3 +66,29 @@ button:not(:disabled):active {
 button:focus {
   border-color: #666;
 }
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.portal {
+  border: 5px solid;
+  border-radius: 50%;
+  width: 100px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portal--blue {
+  border-color: #02fefe;
+  background-color: #063087;
+  flex-direction: column;
+}
+
+.portal--orange {
+  border-color: #fefe0d;
+  background-color: #55270d;
+}

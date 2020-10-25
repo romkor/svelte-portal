@@ -1,7 +1,7 @@
 <script>
-  import Portal from 'svelte-portal'
+  import Portal from "svelte-portal";
 
-  export let name
+  export let name;
 </script>
 
 <style>

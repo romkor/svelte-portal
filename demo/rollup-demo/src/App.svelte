@@ -1,6 +1,19 @@
-<script>
-  import Portal from 'svelte-portal'
-  export let name
+<script lang="ts">
+  import Portal, { portal } from "svelte-portal/src/Portal.svelte";
+  import Avatar from "./components/Avatar.svelte";
+  import Cube from "./components/Cube.svelte";
+
+  type PortalColor = "orange" | "blue";
+
+  let visible = true;
+  let color: PortalColor = "orange";
+
+  function toggle() {
+    visible = !visible;
+  }
+  function swap() {
+    color = color === "orange" ? "blue" : "orange";
+  }
 </script>
 
 <style>
@@ -26,12 +39,27 @@
 </style>
 
 <main>
-  <h1>Hello {name}!</h1>
+  <h1>Svelte-Portal</h1>
   <p>
-    Visit the
-    <a href="https://svelte.dev/tutorial">Svelte tutorial</a>
-    to learn how to build Svelte apps.
-  </p>
-</main>
+    <Portal target={document.getElementById('avatar')}>
+      <Avatar />
+    </Portal>
 
-<Portal>Hello from Portal</Portal>
+    <button on:click={toggle}>{visible ? 'hide' : 'show'}</button>
+    <button on:click={swap}>Swap cubes</button>
+    {#if visible}
+      <Portal>Portal content injected into the body</Portal>
+      <div use:portal hidden>
+        This is also injected into the body, but without a wrapper element
+      </div>
+    {/if}
+  </p>
+  <!-- 
+    When `display: contents` is supported, the browser will ignore the wrapper div.
+    That why the flex-direction different between the red and blue portals.
+  -->
+  <div use:portal={`.portal--${color}`} style="display: contents" hidden>
+    <Cube />
+    <Cube />
+  </div>
+</main>
