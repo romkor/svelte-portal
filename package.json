@@ -1,6 +1,6 @@
 {
   "name": "svelte-portal",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Svelte component for rendering outside the DOM of parent component",
   "main": "src/main.cjs.js",
   "module": "src/main.es.js",
