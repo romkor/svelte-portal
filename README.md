@@ -50,6 +50,6 @@ The functionality can also be applied to DOM elements directly via a svelte acti
 
 The `hidden` atrribute is only needed when using ssr, when portal has moved the element to it's targetted location it removes the hidden attribute.
 
-## Typscript support
+## TypeScript support
 
 `<script lang="ts">` users should import from `"svelte-portal/src/Portal.svelte"` instead of `"svelte-portal"` to get typing support.
