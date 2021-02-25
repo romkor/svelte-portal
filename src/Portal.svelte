@@ -36,9 +36,8 @@
     }
 
     function destroy() {
-      if (el.parent) {
-        el.parent.removeChild(el);
-      }
+      if(targetEl)
+        targetEl.removeChild(el);
     }
 
     update(target);
