@@ -1,5 +1,5 @@
 {
-  "name": "svelte-portal",
+  "name": "@neesh-studio/svelte-portal",
   "version": "2.1.2",
   "description": "Svelte component for rendering outside the DOM of parent component",
   "main": "src/main.cjs.js",
