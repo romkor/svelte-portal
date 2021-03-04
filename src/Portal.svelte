@@ -36,8 +36,13 @@
     }
 
     function destroy() {
-      if(targetEl)
-        targetEl.removeChild(el);
+      try {
+        if (targetEl) targetEl.removeChild(el);
+      } catch {
+        if (el.parent) {
+          el.parent.removeChild(el);
+        }
+      }
     }
 
     update(target);
