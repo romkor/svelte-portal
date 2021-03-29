@@ -1,8 +1,10 @@
 import { render } from "@testing-library/svelte";
 
 import TestPortalWrapper from "./TestPortalWrapper.svelte";
+import TestLifecycle from "./TestLifecycle.svelte";
+import { tick } from "svelte";
 
-describe("<Portal />", () => {
+describe("<Portal /> target", () => {
   let wrapper;
 
   beforeEach(() => {
@@ -40,5 +42,36 @@ describe("<Portal />", () => {
       portalContainer.innerHTML.trim().length === 0;
 
     expect(isPortalContainerEmpty).toBe(true);
+  });
+});
+
+describe("<Portal /> lifecycle", () => {
+  let targetEl;
+  let lifecycleComponent;
+  beforeEach(() => {
+    let { container, component } = render(TestLifecycle);
+    lifecycleComponent = component;
+    targetEl = container.querySelector("#modals");
+  });
+  it("should be added and removed from dom", async () => {
+    expect(targetEl.children).toHaveLength(1);
+    lifecycleComponent.$set({ modalVisible: false });
+    await tick();
+    expect(targetEl.children).toHaveLength(0);
+    lifecycleComponent.$set({ modalVisible: true });
+    await tick();
+    expect(targetEl.children).toHaveLength(1);
+  });
+  it("should be removed from dom after after outro", async () => {
+    lifecycleComponent.$set({ containerVisible: false });
+    await tick();
+    expect(targetEl.children).toHaveLength(1);
+    await new Promise((resolve) => {
+      const unsubscribe = lifecycleComponent.$on("outroend", () => {
+        resolve();
+        unsubscribe();
+      });
+    });
+    expect(targetEl.children).toHaveLength(0);
   });
 });
