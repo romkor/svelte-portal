@@ -4,6 +4,7 @@
   "description": "Svelte component for rendering outside the DOM of parent component",
   "main": "src/main.cjs.js",
   "module": "src/main.es.js",
+  "svelte": "src/Portal.svelte",
   "scripts": {
     "test": "jest test",
     "test:watch": "npm run test -- --watch",
