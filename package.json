@@ -42,7 +42,7 @@
     "@testing-library/jest-dom": "^5.11.5",
     "@testing-library/svelte": "^3.0.0",
     "babel-jest": "^26.6.1",
-    "jest": "^26.6.1",
+    "jest": "^28.1.0",
     "jest-transform-svelte": "^2.1.1",
     "prettier": "2.3.2",
     "release-it": "^15.0.0",
