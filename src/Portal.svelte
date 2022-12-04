@@ -1,6 +1,7 @@
+<svelte:options immutable />
+
 <script context="module">
   import { tick } from "svelte";
-
   /**
    * Usage: <div use:portal={'css selector'}> or <div use:portal={document.body}>
    *
@@ -8,6 +9,7 @@
    * @param {HTMLElement|string} target DOM Element or CSS Selector
    */
   export function portal(el, target = "body") {
+    const document = el.ownerDocument;
     let targetEl;
     async function update(newTarget) {
       target = newTarget;
@@ -57,6 +59,6 @@
   export let target = "body";
 </script>
 
-<div use:portal={target} hidden>
+<div {...$$restProps} use:portal={target} hidden>
   <slot />
 </div>

@@ -36,6 +36,18 @@ describe("<Portal /> target", () => {
     expect(renderedDivInTargetClass).not.toBe(null);
   });
 
+  it("should be rendererd in the default HTML element (document.body) with attributes on parent", () => {
+    const renderedInDefaultWithProps = wrapper.querySelector(
+      "body #renderedInDefaultWithAttributes"
+    );
+
+    expect(renderedInDefaultWithProps).not.toBe(null);
+    expect(renderedInDefaultWithProps.parentNode).not.toBe(null);
+    expect(renderedInDefaultWithProps.parentNode.style.position).toBe(
+      "absolute"
+    );
+  });
+
   it("should not render a Portal at the origin", () => {
     const portalContainer = wrapper.querySelector("#portalCtn");
     const isPortalContainerEmpty =

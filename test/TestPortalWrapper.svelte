@@ -14,6 +14,11 @@
       <Portal target="body > .target">
         <div id="renderedInTargetClass"></div>
       </Portal>
+      <Portal
+        style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);"
+      >
+        <div id="renderedInDefaultWithAttributes"></div>
+      </Portal>
     </div>
   </main>
 
