@@ -6,6 +6,12 @@
   "module": "src/main.es.js",
   "svelte": "src/Portal.svelte",
   "types": "src/Portal.svelte.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/Portal.svelte.d.ts",
+      "svelte": "src/main.es.js"
+    }
+  },
   "scripts": {
     "test": "jest test",
     "test:watch": "npm run test -- --watch",
