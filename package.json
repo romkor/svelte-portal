@@ -10,7 +10,8 @@
     ".": {
       "types": "./src/Portal.svelte.d.ts",
       "svelte": "src/main.es.js"
-   },
+    }
+  },
   "scripts": {
     "test": "jest test",
     "test:watch": "npm run test -- --watch",
