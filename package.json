@@ -8,6 +8,7 @@
   "types": "src/Portal.svelte.d.ts",
   "exports": {
     ".": {
+      "types": "./src/Portal.svelte.d.ts",
       "svelte": "src/main.es.js"
    },
   "scripts": {
