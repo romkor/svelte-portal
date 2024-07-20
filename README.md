@@ -26,11 +26,11 @@ When no target is given it defaults to: `document.body`.
 
 ```html
 <script>
-  import Portal from "svelte-portal";
+	import Portal from 'svelte-portal';
 </script>
 
 <Portal target="body">
-  <div class="toast">Entity successfully updated!</div>
+	<div class="toast">Entity successfully updated!</div>
 </Portal>
 ```
 
