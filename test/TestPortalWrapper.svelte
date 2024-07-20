@@ -1,5 +1,5 @@
 <script>
-	import Portal from '../src/Portal.svelte';
+    import Portal from '../src/lib/Portal.svelte';
 </script>
 
 <body>

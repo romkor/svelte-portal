@@ -5,10 +5,10 @@ import TestLifecycle from './TestLifecycle.svelte';
 import { tick } from 'svelte';
 
 describe('<Portal /> target', () => {
-	let wrapper;
+	let wrapper: HTMLElement;
 
 	beforeEach(() => {
-		let { container } = render(TestPortalWrapper);
+		const { container } = render(TestPortalWrapper);
 		wrapper = container;
 	});
 
@@ -32,19 +32,19 @@ describe('<Portal /> target', () => {
 
 	it('should not render a Portal at the origin', () => {
 		const portalContainer = wrapper.querySelector('#portalCtn');
-		const isPortalContainerEmpty = portalContainer.innerHTML.trim().length === 0;
+		const isPortalContainerEmpty = portalContainer!.innerHTML.trim().length === 0;
 
 		expect(isPortalContainerEmpty).toBe(true);
 	});
 });
 
 describe('<Portal /> lifecycle', () => {
-	let targetEl;
+	let targetEl: HTMLElement;
 	let lifecycleComponent;
 	beforeEach(() => {
-		let { container, component } = render(TestLifecycle);
+		const { container, component } = render(TestLifecycle);
 		lifecycleComponent = component;
-		targetEl = container.querySelector('#modals');
+		targetEl = container.querySelector('#modals')!;
 	});
 	it('should be added and removed from dom', async () => {
 		expect(targetEl.children).toHaveLength(1);
@@ -59,7 +59,7 @@ describe('<Portal /> lifecycle', () => {
 		lifecycleComponent.$set({ containerVisible: false });
 		await tick();
 		expect(targetEl.children).toHaveLength(1);
-		await new Promise((resolve) => {
+		await new Promise<void>((resolve) => {
 			const unsubscribe = lifecycleComponent.$on('outroend', () => {
 				resolve();
 				unsubscribe();
